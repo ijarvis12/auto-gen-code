@@ -34,8 +34,13 @@ if __name__ == '__main__':
       elif numList[k] == n and k == (len(numList) - 1):
         numList.append(0)
         numList[k] = 0
-    for l in numList:
-      s += (words[l]) + ' '
+    for i,l in enumerate(numList):
+      if '(' in words[numList[i-1]]:
+        s += words[l] + ') '
+      elif ':' == words[l]:
+        s += ':\n  '
+      else:
+        s += words[l] + ' '
 
     job = Process(target=func, args=(s,noHit,))
     job.start()
