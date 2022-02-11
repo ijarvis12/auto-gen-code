@@ -18,10 +18,10 @@ if __name__ == '__main__':
   words = [chr(i) for i in range(33,127)]
   words += ['\n','False','True','and','break','continue','elif','else:','except:','finally:']
   words += ['for','if','in','is','not','or','pass','try:','while']
-  words += ['abs(','dict(','float(','int(','len(','list(','pow(','range(','str(','tuple(']
+  words += ['abs(','dict(','float(','int(','len(','list(','range(','str(','tuple(']
 
   numList = [0]
-  n = len(numList)
+  n = len(words)
   
   noHit = Manager().Value('b',True)
   while noHit:
