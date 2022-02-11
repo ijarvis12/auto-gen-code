@@ -16,8 +16,8 @@ if __name__ == '__main__':
   from multiprocessing import Process, Manager
 
   words = [chr(i) for i in range(33,127)]
-  words += ['\n','False','True','and','break','continue','elif','else','except','finally']
-  words += ['for','if','in','is','not','or','pass','try','while']
+  words += ['\n','False','True','and','break','continue','elif','else:','except:','finally:']
+  words += ['for','if','in','is','not','or','pass','try:','while']
   words += ['abs(','dict(','float(','int(','len(','list(','pow(','range(','str(','tuple(']
 
   numList = [0]
