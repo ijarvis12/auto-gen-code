@@ -35,7 +35,7 @@ if __name__ == '__main__':
     for i,l in enumerate(numList):
       if (i is not 0) and '(' in words[numList[i-1]]:
         s += words[l] + ') '
-      elif ':' == words[l]:
+      elif ':' in words[l]:
         s += ':\n  '
       else:
         s += words[l] + ' '
