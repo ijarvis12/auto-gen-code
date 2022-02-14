@@ -1,19 +1,18 @@
 #!/usr/bin/env python3
 
-def func(s,noHit):
+def func(s):
   try:
     eval(s,None,None)
     print('==============')
     print(s)
     print('==============')
     print('\n\n\n')
-    noHit = False
   except:
     pass
 
 if __name__ == '__main__':
 
-  from multiprocessing import Process, Manager
+  from threading import Thread
 
   words = [chr(i) for i in range(33,127)]
   words += ['\n','False','True','and','break','continue','elif','else:','except:','finally:']
@@ -23,8 +22,7 @@ if __name__ == '__main__':
   numList = [0]
   n = len(words)
   
-  noHit = Manager().Value('b',True)
-  while noHit:
+  while True:
     s = ""
     numList[0] += 1
     for k in range(len(numList)):
@@ -35,13 +33,13 @@ if __name__ == '__main__':
         numList.append(0)
         numList[k] = 0
     for i,l in enumerate(numList):
-      if '(' in words[numList[i-1]]:
+      if (i is not 0) and '(' in words[numList[i-1]]:
         s += words[l] + ') '
       elif ':' == words[l]:
         s += ':\n  '
       else:
         s += words[l] + ' '
 
-    job = Process(target=func, args=(s,noHit,))
+    job = Thread(target=func, args=(s,))
     job.start()
     job.join(15)
