@@ -37,7 +37,7 @@ if __name__ == '__main__':
     numList[0] += 1
     lenNumList = len(numList)
 #   carry over iteration if overflow
-    for idx in range(len(numList)):
+    for idx in range(lenNumList)):
       if (numList[idx] == lenTokens) and (idx != (lenNumList - 1)):
         numList[idx+1] += 1
         numList[idx] = 0
