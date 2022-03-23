@@ -46,11 +46,11 @@ if __name__ == '__main__':
 #   concatinate generate code string with some cleanup of syntax
     for i,l in enumerate(numList):
       if (i is not 0) and '(' in words[numList[i-1]]:
-        s += words[l] + ') '
+        s = s.join(words[l] + ') ')
       elif ':' in words[l]:
-        s += ':\n  '
+        s = s.join(':\n  ')
       else:
-        s += words[l] + ' '
+        s = s.join(words[l] + ' ')
 
 #   create thread job for eval generated code and run (max 15 seconds)
     job = Thread(target=func, args=(s,))
