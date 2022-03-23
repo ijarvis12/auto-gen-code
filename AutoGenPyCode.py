@@ -43,7 +43,7 @@ if __name__ == '__main__':
         numList[idx] = 0
       elif (numList[idx] == lenTokens) and (idx == (lenNumList - 1)):
         numList.append(0)
-        numList[dx] = 0
+        numList[idx] = 0
 #   concatinate generate code string with some cleanup of syntax
     for i,num in enumerate(numList):
       token = tokens[num]
