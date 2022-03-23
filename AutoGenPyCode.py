@@ -46,7 +46,7 @@ if __name__ == '__main__':
 #   concatinate generate code string with some cleanup of syntax
     for i,l in enumerate(numList):
       w = words[l]
-      if (i is not 0) and '(' in words[numList[i-1]]:
+      if (i != 0) and '(' in words[numList[i-1]]:
         s = s.join(w + ') ')
       elif ':' in w:
         s = s.join(w + '\n  ')
