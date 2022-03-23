@@ -47,11 +47,11 @@ if __name__ == '__main__':
     for i,l in enumerate(numList):
       w = words[l]
       if (i != 0) and ('(' in words[numList[i-1]]):
-        s = s.join(w + ') ')
+        s += w + ') '
       elif ':' in w:
-        s = s.join(w + '\n  ')
+        s += w + '\n  '
       else:
-        s = s.join(w + ' ')
+        s += w + ' '
 
 #   create thread job for eval generated code and run (max 15 seconds)
     job = Thread(target=func, args=(s,))
