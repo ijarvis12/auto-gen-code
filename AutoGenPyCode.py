@@ -37,10 +37,10 @@ if __name__ == '__main__':
     numList[0] += 1
 #   carry over iteration if overflow
     for k in range(len(numList)):
-      if numList[k] == n and k != (len(numList) - 1):
+      if (numList[k] == n) and (k != (len(numList) - 1)):
         numList[k+1] += 1
         numList[k] = 0
-      elif numList[k] == n and k == (len(numList) - 1):
+      elif (numList[k] == n) and (k == (len(numList) - 1)):
         numList.append(0)
         numList[k] = 0
 #   concatinate generate code string with some cleanup of syntax
