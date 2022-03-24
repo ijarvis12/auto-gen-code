@@ -38,7 +38,7 @@ while true do
     code = code..tokens[num]..' '
   end
 -- try code, if valid print
-  status,errormsg = loadstring(code)
+  status,errormsg = load(code)
   if status then
     print('============')
     print(code)
