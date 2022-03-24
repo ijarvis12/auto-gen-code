@@ -2,16 +2,6 @@
 
 --[[ This program auto generates lua code --]]
 
--- function for xpcall to test code validity
-function runCode()
-  return os.execute("echo '"..code.."' | lua - ")
-end
-
--- error function for xpcall
-function error(x)
-  return x
-end
-
 -- lua tokens for gen code
 tokens = {'"','#','%','*','+','-','..','/','0','1','2','3','4','5','6','7','8','9','<','=','>',
           'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V',
@@ -47,9 +37,9 @@ while true do
   for i,num in ipairs(numList) do
     code = code..tokens[num]..' '
   end
--- try running code, if valid print
-  status,errormsg,ret1,ret2 = xpcall(runCode,error)
-  if not(ret2) then
+-- try code, if valid print
+  status,errormsg = loadstring(code)
+  if status then
     print('============')
     print(code)
     print('============')
