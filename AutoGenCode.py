@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # function to evaluate auto gen code string in separate thread
-def func(code):
+def evalCode(code):
   try:
     eval(code,None,None)
     print('==============')
@@ -55,6 +55,6 @@ if __name__ == '__main__':
         code += token + ' '
 
 #   create thread job for eval generated code and run (max 15 seconds)
-    job = Thread(target=func, args=(code,))
+    job = Thread(target=evalCode, args=(code,))
     job.start()
     job.join(15)
