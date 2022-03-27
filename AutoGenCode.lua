@@ -34,7 +34,7 @@ while true do
     end
   end
 -- create code string from numeric table
-  for i,num in ipairs(numList) do
+  for _,num in ipairs(numList) do
     code = code..tokens[num]..' '
   end
 -- try code, if valid print
